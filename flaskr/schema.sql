@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS classifications;
+
+
+CREATE TABLE user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    ind INTEGER NOT NULL
+    );
+
+CREATE TABLE classifications(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author_id INTEGER NOT NULL,
+    response_to TEXT NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    response TEXT
+)
